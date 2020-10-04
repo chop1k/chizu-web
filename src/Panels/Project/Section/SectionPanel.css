@@ -1,0 +1,14 @@
+.section {
+    padding: 10px 15px 10px 15px;
+}
+
+.section-name {
+    padding: 0 0 3px 0;
+    cursor: pointer;
+}
+
+.section-name > span {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+}
