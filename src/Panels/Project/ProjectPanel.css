@@ -5,9 +5,12 @@
     flex-direction: column;
 }
 
-#project-icon-wrapper {
+#project-banner-wrapper {
     max-width: var(--panel-default-width);
     max-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 #project-search {
