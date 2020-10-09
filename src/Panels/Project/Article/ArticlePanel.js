@@ -1,5 +1,6 @@
-import React from "react";
+import React from "react"
 import './ArticlePanel.css'
+import PropTypes from 'prop-types'
 
 function ArticlePanel(props) {
     return (
@@ -9,6 +10,11 @@ function ArticlePanel(props) {
             </div>
         </div>
     )
+}
+
+ArticlePanel.propTypes = {
+    'name': PropTypes.string.isRequired,
+    'canEdit': PropTypes.bool.isRequired
 }
 
 export default ArticlePanel

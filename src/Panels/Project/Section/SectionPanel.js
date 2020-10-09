@@ -1,6 +1,7 @@
 import React from "react";
 import './SectionPanel.css'
 import ArticlePanel from "../Article/ArticlePanel";
+import PropTypes from 'prop-types'
 
 function SectionPanel(props) {
     return (
@@ -15,6 +16,11 @@ function SectionPanel(props) {
             })}
         </div>
     )
+}
+
+SectionPanel.propTypes = {
+    'name': PropTypes.string.isRequired,
+    'articles': PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default SectionPanel

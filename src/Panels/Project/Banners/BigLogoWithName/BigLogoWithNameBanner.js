@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 import './BigLogoWithNameBanner.css'
 
 function BigLogoWithNameBanner(props) {
@@ -12,6 +13,11 @@ function BigLogoWithNameBanner(props) {
             </div>
         </div>
     )
+}
+
+BigLogoWithNameBanner.propTypes = {
+    'url': PropTypes.string.isRequired,
+    'name': PropTypes.string.isRequired
 }
 
 export default BigLogoWithNameBanner

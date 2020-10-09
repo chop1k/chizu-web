@@ -1,9 +1,9 @@
 import React from "react";
-import style from './LoginPanel.css'
+import './LoginPanel.css'
 
 function LoginPanel() {
     return (
-        <div id="login-panel" style={style}>
+        <div id="login-panel">
             <div className="input-wrapper">
                 <input type="text" placeholder="Username"/>
             </div>
@@ -18,5 +18,7 @@ function LoginPanel() {
         </div>
     )
 }
+
+LoginPanel.propTypes = {}
 
 export default LoginPanel

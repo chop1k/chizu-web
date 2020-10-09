@@ -12,7 +12,7 @@ function App() {
               </div>
           </div>
           <div id="panel-wrapper">
-              <ProjectPanel/>
+              <ProjectPanel bannerType={3} name="ProjectName" sections={[]}/>
           </div>
           <div id="page-wrapper">
               <HomePage/>

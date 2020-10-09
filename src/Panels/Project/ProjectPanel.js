@@ -2,240 +2,44 @@ import React from "react";
 import './ProjectPanel.css'
 import SectionPanel from "./Section/SectionPanel";
 import BigLogoWithNameBanner from "./Banners/BigLogoWithName/BigLogoWithNameBanner";
-import DefaultBanner from "./Banners/Default/DefaultBanner";
+import ImageBanner from "./Banners/Image/ImageBanner";
 import Footer from "./Footer/Footer";
 import NameBanner from "./Banners/Name/NameBanner";
+import PropTypes from 'prop-types'
 
-const sections = [
-    {
-        'id': 1,
-        'name': 'sectionName',
-        'articles': [
-            {
-                'id': 1,
-                'name': 'articleName'
-            },
-            {
-                'id': 2,
-                'name': 'articleName'
-            },
-            {
-                'id': 3,
-                'name': 'articleName'
-            }
-        ]
-    },
-    {
-        'id': 2,
-        'name': 'sectionName',
-        'articles': [
-            {
-                'id': 1,
-                'name': 'articleName'
-            },
-            {
-                'id': 2,
-                'name': 'articleName'
-            },
-            {
-                'id': 3,
-                'name': 'articleName'
-            }
-        ]
-    },
-    {
-        'id': 2,
-        'name': 'sectionName',
-        'articles': [
-            {
-                'id': 1,
-                'name': 'articleName'
-            },
-            {
-                'id': 2,
-                'name': 'articleName'
-            },
-            {
-                'id': 3,
-                'name': 'articleName'
-            }
-        ]
-    },
-    {
-        'id': 2,
-        'name': 'sectionName',
-        'articles': [
-            {
-                'id': 1,
-                'name': 'articleName'
-            },
-            {
-                'id': 2,
-                'name': 'articleName'
-            },
-            {
-                'id': 3,
-                'name': 'articleName'
-            }
-        ]
-    },
-    {
-        'id': 2,
-        'name': 'sectionName',
-        'articles': [
-            {
-                'id': 1,
-                'name': 'articleName'
-            },
-            {
-                'id': 2,
-                'name': 'articleName'
-            },
-            {
-                'id': 3,
-                'name': 'articleName'
-            }
-        ]
-    },
-    {
-        'id': 2,
-        'name': 'sectionName',
-        'articles': [
-            {
-                'id': 1,
-                'name': 'articleName'
-            },
-            {
-                'id': 2,
-                'name': 'articleName'
-            },
-            {
-                'id': 3,
-                'name': 'articleName'
-            }
-        ]
-    },
-    {
-        'id': 2,
-        'name': 'sectionName',
-        'articles': [
-            {
-                'id': 1,
-                'name': 'articleName'
-            },
-            {
-                'id': 2,
-                'name': 'articleName'
-            },
-            {
-                'id': 3,
-                'name': 'articleName'
-            }
-        ]
-    },
-    {
-        'id': 2,
-        'name': 'sectionName',
-        'articles': [
-            {
-                'id': 1,
-                'name': 'articleName'
-            },
-            {
-                'id': 2,
-                'name': 'articleName'
-            },
-            {
-                'id': 3,
-                'name': 'articleName'
-            }
-        ]
-    },
-    {
-        'id': 2,
-        'name': 'sectionName',
-        'articles': [
-            {
-                'id': 1,
-                'name': 'articleName'
-            },
-            {
-                'id': 2,
-                'name': 'articleName'
-            },
-            {
-                'id': 3,
-                'name': 'articleName'
-            }
-        ]
-    },
-    {
-        'id': 2,
-        'name': 'sectionName',
-        'articles': [
-            {
-                'id': 1,
-                'name': 'articleName'
-            },
-            {
-                'id': 2,
-                'name': 'articleName'
-            },
-            {
-                'id': 3,
-                'name': 'articleName'
-            }
-        ]
-    },
-]
+function ProjectPanel(props) {
 
-// 1 = DefaultBanner
-// 2 = BigLogoWithName
-// 3 = NameBanner
-const bannerType = 3;
+    let banner = (
+        <BigLogoWithNameBanner url={props.url} name={props.name}/>
+    )
 
-function getBanner(props) {
-    if (bannerType === 1)
-    {
-        return (
-            <DefaultBanner url={props.url}/>
+    if (props.bannerType === 1) {
+        banner = (
+            <ImageBanner url={props.url}/>
         )
     }
 
-    if (bannerType === 2)
-    {
-        return (
-            <BigLogoWithNameBanner url={props.url} name={props.name}/>
-        )
-    }
-
-    if (bannerType === 3)
-    {
-        return (
+    if (props.bannerType === 3) {
+        banner = (
             <NameBanner name={props.name}/>
         )
     }
-}
-
-function ProjectPanel() {
-
 
     return (
         <div id="project-panel">
 
             <div id="project-banner-wrapper">
-                {getBanner({
-                    'name': 'ProjectName'
-                })}
+                {banner}
             </div>
+
             <div id="project-search">
                 <input type="text" placeholder="Search"/>
             </div>
 
             {
-                sections.map((section, i) => {
+                props.sections.map((section, i) => {
                     return (
-                        <SectionPanel key={i} section-id={section.id} name={section.name} articles={section.articles}/>
+                        <SectionPanel key={i} name={section.name} articles={section.articles}/>
                     )
                 })
             }
@@ -243,6 +47,12 @@ function ProjectPanel() {
             <Footer/>
         </div>
     )
+}
+
+ProjectPanel.propTypes = {
+    'name': PropTypes.string.isRequired,
+    'bannerType': PropTypes.number.isRequired,
+    'sections': PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default ProjectPanel

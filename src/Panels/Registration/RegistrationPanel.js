@@ -9,4 +9,6 @@ function RegistrationPanel() {
     )
 }
 
+RegistrationPanel.propTypes = {}
+
 export default RegistrationPanel

@@ -8,4 +8,6 @@ function HomePage() {
     )
 }
 
+HomePage.propTypes = {}
+
 export default HomePage
