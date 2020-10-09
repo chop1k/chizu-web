@@ -1,11 +1,23 @@
 .article {
     padding: 5px 0 5px 5px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .article-name {
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .article-name > span {
     color: grey;
+}
+
+.settings-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
 }

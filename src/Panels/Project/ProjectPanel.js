@@ -39,7 +39,7 @@ function ProjectPanel(props) {
             {
                 props.sections.map((section, i) => {
                     return (
-                        <SectionPanel key={i} name={section.name} articles={section.articles}/>
+                        <SectionPanel key={i} articles={section.articles} canEdit={section.canEdit} name={section.name}/>
                     )
                 })
             }

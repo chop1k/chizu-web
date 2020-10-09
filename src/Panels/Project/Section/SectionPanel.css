@@ -4,11 +4,28 @@
 
 .section-name {
     padding: 0 0 3px 0;
-    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
 }
 
-.section-name > span {
+.section-name-wrapper {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    word-break: keep-all;
+    overflow: hidden;
+}
+
+.section-name-wrapper > span {
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 700;
+}
+
+.settings-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
 }

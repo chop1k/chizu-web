@@ -4,7 +4,48 @@ import './App.css'
 import HomePage from "../Pages/Home/HomePage";
 
 function App() {
-  return (
+    let sections = [
+        {
+            'name': 'sectionName',
+            'canEdit': true,
+            'articles': [
+                {
+                    'name': 'sectionName',
+                    'canEdit': true
+                },
+                {
+                    'name': 'sectionName',
+                    'canEdit': true
+                },
+                {
+                    'name': 'sectionName',
+                    'canEdit': true
+                },
+                {
+                    'name': 'sectionName',
+                    'canEdit': true
+                },
+                {
+                    'name': 'sectionName',
+                    'canEdit': true
+                },
+                {
+                    'name': 'sectionName',
+                    'canEdit': true
+                },
+                {
+                    'name': 'sectionName',
+                    'canEdit': true
+                },
+                {
+                    'name': 'sectionName',
+                    'canEdit': true
+                },
+            ]
+        }
+    ]
+
+    return (
       <div id="app">
           <div id="header">
               <div id="panel-burger">
@@ -12,13 +53,13 @@ function App() {
               </div>
           </div>
           <div id="panel-wrapper">
-              <ProjectPanel bannerType={3} name="ProjectName" sections={[]}/>
+              <ProjectPanel bannerType={3} name="ProjectName" sections={sections}/>
           </div>
           <div id="page-wrapper">
               <HomePage/>
           </div>
       </div>
-  );
+    );
 }
 
 export default App;
