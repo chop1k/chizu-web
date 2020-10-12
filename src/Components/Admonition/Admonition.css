@@ -1,0 +1,17 @@
+.admonition-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.admonition {
+    border-left: 4px solid;
+    border-radius: 5px;
+    padding: 7px;
+    margin: 5px 0 5px 0;
+    background-color: var(--bright-background-color);
+}
+
+.admonition-text {
+    overflow: hidden;
+    word-break: break-all;
+}
