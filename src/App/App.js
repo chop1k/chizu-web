@@ -2,6 +2,8 @@ import React from 'react';
 import ProjectPanel from "../Panels/Project/ProjectPanel";
 import './App.css'
 import HomePage from "../Pages/Home/HomePage";
+import ActionPanel from "../Pages/ActionPanel/ActionPanel";
+import Documentation from "../Pages/Documentation/Documentation";
 
 function App() {
     let sections = [
@@ -56,7 +58,10 @@ function App() {
               <ProjectPanel bannerType={3} name="ProjectName" sections={sections}/>
           </div>
           <div id="page-wrapper">
-              <HomePage/>
+              <Documentation mode={'read'}/>
+          </div>
+          <div id="action-panel">
+
           </div>
       </div>
     );

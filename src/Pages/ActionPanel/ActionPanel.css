@@ -1,0 +1,29 @@
+#action-panel {
+    width: 100%;
+    margin: 0 0 10px 0;
+    background-color: var(--not-quite-bright-background-color);
+    border-radius: 5px;
+    display: flex;
+}
+
+.action {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 40px;
+    max-height: 40px;
+    padding: 10px 5px 10px 5px;
+    cursor: pointer;
+}
+
+.action:first-child {
+    padding-left: 10px;
+}
+
+.action:last-child {
+    padding-right: 10px;
+}
+
+.action > svg {
+    transform: scale(1.25);
+}

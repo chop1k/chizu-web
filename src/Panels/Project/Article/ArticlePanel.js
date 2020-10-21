@@ -2,6 +2,7 @@ import React from "react"
 import './ArticlePanel.css'
 import PropTypes from 'prop-types'
 import Icons from "../../../App/Icons";
+import Icon from "../../../Components/Icon/Icon";
 
 function ArticlePanel(props) {
     return (
@@ -9,9 +10,7 @@ function ArticlePanel(props) {
             <div className="article-name">
                 <span>{props.name}</span>
             </div>
-            <div className="settings-wrapper" style={{'visibility': props.canEdit ? 'visible' : 'hidden'}}>
-                {Icons.Settings}
-            </div>
+            <Icon icon={Icons.Settings} visible={props.canEdit}/>
         </div>
     )
 }

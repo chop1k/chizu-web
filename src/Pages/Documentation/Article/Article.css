@@ -1,0 +1,10 @@
+#article {
+    display: flex;
+    flex-direction: column;
+}
+
+#article-name {
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    grid-column-gap: 5px;
+}

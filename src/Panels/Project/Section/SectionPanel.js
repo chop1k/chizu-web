@@ -3,6 +3,7 @@ import './SectionPanel.css'
 import ArticlePanel from "../Article/ArticlePanel";
 import PropTypes from 'prop-types'
 import Icons from "../../../App/Icons";
+import Icon from "../../../Components/Icon/Icon";
 
 function SectionPanel(props) {
     return (
@@ -11,9 +12,7 @@ function SectionPanel(props) {
                 <div className="section-name-wrapper">
                     <span>{props.name}</span>
                 </div>
-                <div className="settings-wrapper" style={{'visibility': props.canEdit ? 'visible' : 'hidden'}}>
-                    {Icons.Settings}
-                </div>
+                <Icon icon={Icons.Settings} visible={props.canEdit}/>
             </div>
             {
                 props.articles.map((article,i) => {
